@@ -55,7 +55,7 @@ module.exports = (robot) ->
 
   # 月~金曜日の7時00分に、定期的にタスクが実行される。
   # cronJobの引数は、秒・分・時間・日・月・曜日の順番
-  new cronJob('0 0 8 * * 1-5', () ->
+  new cronJob('0 0 8 * * 1-7', () ->
     # 有楽町線(Yahoo!運行情報から選択したURLを設定する。)
     metro_yu = 'http://transit.yahoo.co.jp/traininfo/detail/137/0/'
     # 京浜東北線
