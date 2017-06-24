@@ -48,7 +48,7 @@ module.exports = (robot) ->
     cheerio.fetch url, (err, $, res) ->
       title = "#{$('h1').text()}"
       if $('.icnNormalLarge').length
-        msg.send "#{title}は遅れてないよ。━ ━ (´･ω ･`)━ ━ "
+        msg.send "#{title}は遅れてないよ。(｀・ω・´)ｼｬｷｰﾝ"
       else
         info = $('.trouble p').text()
         msg.send "#{title}は遅れているみたい。♪ へ(´д ｀へ)♪ (ノ´ д ｀)ノ♪ \n#{info}"
@@ -74,8 +74,8 @@ module.exports = (robot) ->
 
       if $('.icnNormalLarge').length
         # 通常運転の場合
-        robot.send {room: "#mybot"}, "#{title}は遅延していません"
+        robot.send {room: "#test"}, "#{title}は遅延していません"
       else
         # 通常運転以外の場合
         info = $('.trouble p').text()
-        robot.send {room: "#mybot"}, "#{title}は遅延しています\n#{info}"
+        robot.send {room: "#test"}, "#{title}は遅延しています\n#{info}"
